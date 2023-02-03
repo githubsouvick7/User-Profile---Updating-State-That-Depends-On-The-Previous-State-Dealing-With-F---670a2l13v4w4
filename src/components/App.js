@@ -1,19 +1,16 @@
-import React from 'react'
+import React, { createContext } from 'react'
 import '../styles/App.css';
 import { UserProfile } from './UserProfile';
 
-
+export const UserContext = createContext({});
 const App = () => {
 
   return (
-    <div id="main">
-      
-        <UserProfile />
-      
-    </div>
+    <UserContext.Provider value={{ name: "Newton", age: 3 }}>
+      <UserProfile />
+    </UserContext.Provider>
   )
 }
 
 
 export default App;
-export {UserContext}
